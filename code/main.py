@@ -1,5 +1,9 @@
 import requests
 
+import json
+
+import sys
+
 TITLE = '''
 
    _____ _                               
@@ -13,3 +17,14 @@ TITLE = '''
 '''
 
 print(TITLE)
+
+TABLE = dict()
+   
+if sys.platform == 'linux':
+	temp = json.load(open("assets/ptable.json", "r"))["Table"]["Row"]
+
+elif sys.platform == 'win32':
+	temp = json.load(open("assets\\ptable.json", "r"))["Table"]["Row"]
+   
+for i in temp:
+	TABLE[i['Cell'][2]] = i['Cell']
