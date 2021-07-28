@@ -13,7 +13,8 @@ TITLE = '''
  | |____| | | |  __/ | | | | ||_|   |_|  
   \_____|_| |_|\___|_| |_| |_|           
                                          
-                                         
+Welcom to Chem++ Console Version 
+Type Help for a list of Commands
 '''
 
 print(TITLE)
@@ -28,3 +29,23 @@ elif sys.platform == 'win32':
    
 for i in temp:
 	TABLE[i['Cell'][2]] = i['Cell']
+	
+def command(x):
+	if x == "Exit":
+		RUNNING = False
+
+RUNNING = True
+
+while RUNNING:
+	print("}")
+	
+	CMD = input(" ")
+	
+	command(CMD)
+	
+	
+	
+print("Exiting Chem++")
+	
+	
+	
